@@ -117,8 +117,7 @@ html:not(#sg) .form-section:not(:has(li[data-type="control_image"]))::before {
   height: 72px !important;
   margin: 24px 40px 16px !important;
   padding-bottom: 16px !important;
-  background: url("https://shamisgentile.github.io/sg-forms/sg-logo.png") center top / auto 72px no-repeat !important;
-  background-origin: content-box !important;
+background: url("https://shamisgentile.jotform.com/uploads/wtrent/form_files/Shamis%20Logo.651efe8a99d6f6.74500848-0x112.png") center top / auto 72px no-repeat !important;  background-origin: content-box !important;
   background-clip: content-box !important;
   box-sizing: content-box !important;
   border-bottom: 1px solid var(--sg-line) !important;
