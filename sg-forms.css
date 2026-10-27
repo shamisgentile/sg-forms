@@ -1,0 +1,251 @@
+/* ============================================================
+   Shamis & Gentile, P.A. — Shared Jotform Stylesheet (hosted)
+   Every form loads this with ONE line in Inject Custom CSS:
+     @import url("https://YOURNAME.github.io/sg-forms/sg-forms.css");
+   Edit this file to change every form at once.
+   Classic Forms only (not Card Forms).
+   Each form still needs: Image field (logo) first, then a Heading field.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --sg-navy: #0d1830;
+  --sg-navy-2: #15234a;
+  --sg-ink: #14213d;
+  --sg-gold: #e9b937;
+  --sg-gold-dark: #c99a1d;
+  --sg-gold-tint: #fdf6e3;
+  --sg-text: #4a5568;
+  --sg-muted: #8a94a6;
+  --sg-line: #e3e6ec;
+  --sg-white: #ffffff;
+}
+
+/* ---------- Page background ---------- */
+html, body, .supernova {
+  background: linear-gradient(180deg, var(--sg-navy-2) 0%, var(--sg-navy) 55%) !important;
+  background-attachment: fixed !important;
+  min-height: 100%;
+}
+
+/* ---------- Form card ---------- */
+.form-all {
+  max-width: 560px !important;
+  margin: 48px auto 32px !important;
+  background: var(--sg-white) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px rgba(5, 10, 25, 0.45) !important;
+  padding: 8px 8px 24px !important;
+  font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Trust badge above the card */
+.form-all::before {
+  content: "\1F512  Confidential \00B7  Encrypted Submission";
+  position: absolute;
+  top: -32px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  color: #c7cede;
+  letter-spacing: 0.01em;
+}
+
+/* Firm contact footer below the card */
+.form-all::after {
+  content: "Shamis & Gentile, P.A.  \00B7  14 NE 1st Ave, Suite 705, Miami, FL 33132  \00B7  305-479-2299";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9aa4b8;
+  padding: 0 16px;
+}
+
+/* ---------- Logo (Image field) ---------- */
+li[data-type="control_image"] {
+  padding-top: 24px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid var(--sg-line);
+}
+li[data-type="control_image"] img {
+  max-width: 300px !important;
+  height: auto !important;
+}
+
+/* ---------- Heading field ---------- */
+.form-header-group {
+  border: none !important;
+  padding: 28px 40px 8px !important;
+  text-align: center !important;
+}
+.form-header-group .form-header {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--sg-ink) !important;
+}
+.form-header-group .form-subHeader {
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--sg-text) !important;
+  margin-top: 10px !important;
+}
+
+/* ---------- Questions ---------- */
+.form-line {
+  padding: 14px 40px !important;
+  margin: 0 !important;
+}
+.form-line-active {
+  background: transparent !important;
+}
+
+.form-label,
+.form-label-top {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: var(--sg-ink) !important;
+  margin-bottom: 10px !important;
+}
+.form-required {
+  color: var(--sg-gold-dark) !important;
+}
+
+.form-sub-label {
+  font-size: 12px !important;
+  color: var(--sg-muted) !important;
+  margin-top: 4px !important;
+}
+
+/* ---------- Inputs ---------- */
+.form-textbox,
+.form-dropdown,
+.form-textarea,
+input[type="email"],
+input[type="tel"] {
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-size: 16px !important; /* 16px stops iOS zoom-on-tap */
+  color: var(--sg-ink) !important;
+  background: #fff !important;
+  border: 1px solid #cfd5df !important;
+  border-radius: 8px !important;
+  height: 46px !important;
+  padding: 0 14px !important;
+  box-shadow: none !important;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form-textarea {
+  height: auto !important;
+  padding: 12px 14px !important;
+}
+.form-textbox:focus,
+.form-dropdown:focus,
+.form-textarea:focus {
+  border-color: var(--sg-gold) !important;
+  box-shadow: 0 0 0 3px rgba(233, 185, 55, 0.25) !important;
+  outline: none !important;
+}
+.form-textbox::placeholder {
+  color: #a3abba !important;
+}
+
+/* Radio / checkbox options as tappable tiles */
+.form-radio-item,
+.form-checkbox-item {
+  border: 1px solid #cfd5df;
+  border-radius: 8px;
+  padding: 12px 14px !important;
+  margin-bottom: 8px !important;
+}
+.form-radio:checked + label,
+.form-checkbox:checked + label {
+  color: var(--sg-ink) !important;
+  font-weight: 600;
+}
+
+/* ---------- Errors ---------- */
+.form-line-error .form-textbox,
+.form-line-error .form-dropdown {
+  border-color: #c53030 !important;
+}
+.form-error-message {
+  background: #fdecec !important;
+  color: #9b1c1c !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+}
+
+/* OPTIONAL — Instagram in-app browser fix.
+   Hides the "This field is required" bubble that fires when Meta's autofill
+   sheet steals focus. Required fields still block submission.
+   Remove the comment markers to turn it on for every form. */
+/*
+.form-error-message { display: none !important; }
+.form-validation-error { box-shadow: none !important; }
+.form-line-error { background: none !important; }
+*/
+
+/* ---------- Submit button ---------- */
+li[data-type="control_button"] {
+  border-top: 1px solid var(--sg-line);
+  padding-top: 24px !important;
+}
+.form-submit-button,
+.submit-button {
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--sg-ink) !important;
+  background: var(--sg-gold) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  min-width: 240px !important;
+  height: 52px !important;
+  padding: 0 28px !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.form-submit-button:hover,
+.submit-button:hover {
+  background: var(--sg-gold-dark) !important;
+}
+.form-submit-button:focus-visible {
+  outline: 3px solid var(--sg-ink) !important;
+  outline-offset: 2px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .form-all {
+    margin: 44px 12px 72px !important;
+    border-radius: 12px !important;
+  }
+  .form-line,
+  .form-header-group {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .form-header-group .form-header { font-size: 24px !important; }
+  .form-label, .form-label-top { font-size: 17px !important; }
+  .form-submit-button, .submit-button { width: 100% !important; min-width: 0 !important; }
+  .form-all::after { bottom: -60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
