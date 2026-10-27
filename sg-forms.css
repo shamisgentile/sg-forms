@@ -108,7 +108,7 @@ html:not(#sg) .form-cover-wrapper,
 html:not(#sg) [class*="formLogo"] {
   display: none !important;
 }
-}
+
 
 /* Logo at the top of every page that doesn't already have a logo Image field */
 html:not(#sg) .form-section:not(:has(li[data-type="control_image"]))::before {
