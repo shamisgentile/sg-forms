@@ -103,8 +103,11 @@ html:not(#sg) li[data-type="control_image"] img {
 
 /* ---------- Logo inside the card ---------- */
 /* Hide Jotform's "Add Logo" header logo that sits outside the card */
+html:not(#sg) #formCoverLogo,
+html:not(#sg) .form-cover-wrapper,
 html:not(#sg) [class*="formLogo"] {
   display: none !important;
+}
 }
 
 /* Logo at the top of every page that doesn't already have a logo Image field */
