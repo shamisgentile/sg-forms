@@ -163,17 +163,45 @@ input[type="tel"] {
   color: #a3abba !important;
 }
 
-/* Radio / checkbox options as tappable tiles */
+/* Radio / checkbox options — side-by-side tiles */
+.form-single-column,
+.form-multiple-column {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+.form-single-column .clearfix,
+.form-multiple-column .clearfix {
+  display: none !important;
+}
 .form-radio-item,
 .form-checkbox-item {
+  flex: 1 1 140px !important;
+  width: auto !important;
+  margin: 0 !important;
   border: 1px solid #cfd5df;
   border-radius: 8px;
   padding: 12px 14px !important;
-  margin-bottom: 8px !important;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
 }
-.form-radio:checked + label,
-.form-checkbox:checked + label {
+.form-radio-item:hover,
+.form-checkbox-item:hover {
+  border-color: var(--sg-gold);
+}
+.form-radio-item:has(input:checked),
+.form-checkbox-item:has(input:checked) {
+  border-color: var(--sg-gold) !important;
+  background: var(--sg-gold-tint) !important;
+}
+.form-radio-item label,
+.form-checkbox-item label {
+  cursor: pointer;
+  width: 100%;
   color: var(--sg-ink) !important;
+}
+.form-radio-item:has(input:checked) label,
+.form-checkbox-item:has(input:checked) label {
   font-weight: 600;
 }
 
