@@ -30,9 +30,7 @@
 html:not(#sg),
 html:not(#sg) body,
 html:not(#sg) .supernova {
-  background: linear-gradient(180deg, var(--sg-navy-2) 0%, var(--sg-navy) 55%) !important;
-  background-color: var(--sg-navy) !important;
-  background-attachment: fixed !important;
+  background: #0A1730 !important;
   min-height: 100%;
 }
 
