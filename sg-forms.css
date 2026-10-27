@@ -1,10 +1,14 @@
 /* ============================================================
    Shamis & Gentile, P.A. — Shared Jotform Stylesheet (hosted)
    Every form loads this with ONE line in Inject Custom CSS:
-     @import url("https://YOURNAME.github.io/sg-forms/sg-forms.css");
+     @import url("https://shamisgentile.github.io/sg-forms/sg-forms.css");
    Edit this file to change every form at once.
    Classic Forms only (not Card Forms).
    Each form still needs: Image field (logo) first, then a Heading field.
+
+   v2: every selector starts with  html:not(#sg)  so these rules outrank
+   Jotform's own live-form theme styles (which were overriding the
+   background, card, badge and heading on published forms).
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -23,79 +27,94 @@
 }
 
 /* ---------- Page background ---------- */
-html, body, .supernova {
+html:not(#sg),
+html:not(#sg) body,
+html:not(#sg) .supernova {
   background: linear-gradient(180deg, var(--sg-navy-2) 0%, var(--sg-navy) 55%) !important;
+  background-color: var(--sg-navy) !important;
   background-attachment: fixed !important;
   min-height: 100%;
 }
 
 /* ---------- Form card ---------- */
-.form-all {
+html:not(#sg) .form-all {
   max-width: 560px !important;
-  margin: 48px auto 32px !important;
+  margin: 56px auto 72px !important;
   background: var(--sg-white) !important;
+  background-color: var(--sg-white) !important;
   border-radius: 16px !important;
   box-shadow: 0 24px 60px rgba(5, 10, 25, 0.45) !important;
   padding: 8px 8px 24px !important;
   font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif !important;
-  position: relative;
+  position: relative !important;
   overflow: visible !important;
 }
 
 /* Trust badge above the card */
-.form-all::before {
-  content: "\1F512  Confidential \00B7  Encrypted Submission";
-  position: absolute;
-  top: -32px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 13px;
-  color: #c7cede;
+html:not(#sg) .form-all::before {
+  content: "\1F512  Confidential \00B7  Encrypted Submission" !important;
+  display: block !important;
+  visibility: visible !important;
+  position: absolute !important;
+  top: -32px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  text-align: center !important;
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-size: 13px !important;
+  color: #c7cede !important;
   letter-spacing: 0.01em;
+  z-index: 2;
 }
 
 /* Firm contact footer below the card */
-.form-all::after {
-  content: "Shamis & Gentile, P.A.  \00B7  14 NE 1st Ave, Suite 705, Miami, FL 33132  \00B7  305-479-2299";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #9aa4b8;
-  padding: 0 16px;
+html:not(#sg) .form-all::after {
+  content: "Shamis & Gentile, P.A.  \00B7  14 NE 1st Ave, Suite 705, Miami, FL 33132  \00B7  305-479-2299" !important;
+  display: block !important;
+  visibility: visible !important;
+  position: absolute !important;
+  bottom: -40px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  text-align: center !important;
+  font-family: 'Inter', Arial, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  color: #9aa4b8 !important;
+  padding: 0 16px !important;
 }
 
 /* ---------- Logo (Image field) ---------- */
-li[data-type="control_image"] {
+html:not(#sg) li[data-type="control_image"] {
   padding-top: 24px !important;
   padding-bottom: 8px !important;
   border-bottom: 1px solid var(--sg-line);
 }
-li[data-type="control_image"] img {
+html:not(#sg) li[data-type="control_image"] img {
   max-width: 300px !important;
   height: auto !important;
 }
 
 /* ---------- Heading field ---------- */
-.form-header-group {
+html:not(#sg) .form-header-group {
   border: none !important;
   padding: 28px 40px 8px !important;
   text-align: center !important;
 }
-.form-header-group .form-header {
+html:not(#sg) .form-header-group .form-header {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 28px !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
   color: var(--sg-ink) !important;
 }
-.form-header-group .form-subHeader {
+html:not(#sg) .form-header-group .form-subHeader {
   font-family: 'Inter', Arial, sans-serif !important;
   font-size: 15px !important;
   line-height: 1.6 !important;
@@ -104,16 +123,15 @@ li[data-type="control_image"] img {
 }
 
 /* ---------- Questions ---------- */
-.form-line {
+html:not(#sg) .form-line {
   padding: 14px 40px !important;
   margin: 0 !important;
 }
-.form-line-active {
+html:not(#sg) .form-line-active {
   background: transparent !important;
 }
-
-.form-label,
-.form-label-top {
+html:not(#sg) .form-label,
+html:not(#sg) .form-label-top {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 18px !important;
   font-weight: 600 !important;
@@ -121,22 +139,21 @@ li[data-type="control_image"] img {
   color: var(--sg-ink) !important;
   margin-bottom: 10px !important;
 }
-.form-required {
+html:not(#sg) .form-required {
   color: var(--sg-gold-dark) !important;
 }
-
-.form-sub-label {
+html:not(#sg) .form-sub-label {
   font-size: 12px !important;
   color: var(--sg-muted) !important;
   margin-top: 4px !important;
 }
 
 /* ---------- Inputs ---------- */
-.form-textbox,
-.form-dropdown,
-.form-textarea,
-input[type="email"],
-input[type="tel"] {
+html:not(#sg) .form-textbox,
+html:not(#sg) .form-dropdown,
+html:not(#sg) .form-textarea,
+html:not(#sg) input[type="email"],
+html:not(#sg) input[type="tel"] {
   font-family: 'Inter', Arial, sans-serif !important;
   font-size: 16px !important; /* 16px stops iOS zoom-on-tap */
   color: var(--sg-ink) !important;
@@ -148,34 +165,34 @@ input[type="tel"] {
   box-shadow: none !important;
   transition: border-color .15s ease, box-shadow .15s ease;
 }
-.form-textarea {
+html:not(#sg) .form-textarea {
   height: auto !important;
   padding: 12px 14px !important;
 }
-.form-textbox:focus,
-.form-dropdown:focus,
-.form-textarea:focus {
+html:not(#sg) .form-textbox:focus,
+html:not(#sg) .form-dropdown:focus,
+html:not(#sg) .form-textarea:focus {
   border-color: var(--sg-gold) !important;
   box-shadow: 0 0 0 3px rgba(233, 185, 55, 0.25) !important;
   outline: none !important;
 }
-.form-textbox::placeholder {
+html:not(#sg) .form-textbox::placeholder {
   color: #a3abba !important;
 }
 
-/* Radio / checkbox options — side-by-side tiles */
-.form-single-column,
-.form-multiple-column {
+/* ---------- Radio / checkbox options — side-by-side tiles ---------- */
+html:not(#sg) .form-single-column,
+html:not(#sg) .form-multiple-column {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 10px !important;
 }
-.form-single-column .clearfix,
-.form-multiple-column .clearfix {
+html:not(#sg) .form-single-column .clearfix,
+html:not(#sg) .form-multiple-column .clearfix {
   display: none !important;
 }
-.form-radio-item,
-.form-checkbox-item {
+html:not(#sg) .form-radio-item,
+html:not(#sg) .form-checkbox-item {
   flex: 1 1 140px !important;
   width: auto !important;
   margin: 0 !important;
@@ -185,32 +202,32 @@ input[type="tel"] {
   cursor: pointer;
   transition: border-color .15s ease, background .15s ease;
 }
-.form-radio-item:hover,
-.form-checkbox-item:hover {
+html:not(#sg) .form-radio-item:hover,
+html:not(#sg) .form-checkbox-item:hover {
   border-color: var(--sg-gold);
 }
-.form-radio-item:has(input:checked),
-.form-checkbox-item:has(input:checked) {
+html:not(#sg) .form-radio-item:has(input:checked),
+html:not(#sg) .form-checkbox-item:has(input:checked) {
   border-color: var(--sg-gold) !important;
   background: var(--sg-gold-tint) !important;
 }
-.form-radio-item label,
-.form-checkbox-item label {
+html:not(#sg) .form-radio-item label,
+html:not(#sg) .form-checkbox-item label {
   cursor: pointer;
   width: 100%;
   color: var(--sg-ink) !important;
 }
-.form-radio-item:has(input:checked) label,
-.form-checkbox-item:has(input:checked) label {
+html:not(#sg) .form-radio-item:has(input:checked) label,
+html:not(#sg) .form-checkbox-item:has(input:checked) label {
   font-weight: 600;
 }
 
 /* ---------- Errors ---------- */
-.form-line-error .form-textbox,
-.form-line-error .form-dropdown {
+html:not(#sg) .form-line-error .form-textbox,
+html:not(#sg) .form-line-error .form-dropdown {
   border-color: #c53030 !important;
 }
-.form-error-message {
+html:not(#sg) .form-error-message {
   background: #fdecec !important;
   color: #9b1c1c !important;
   border-radius: 6px !important;
@@ -222,18 +239,21 @@ input[type="tel"] {
    sheet steals focus. Required fields still block submission.
    Remove the comment markers to turn it on for every form. */
 /*
-.form-error-message { display: none !important; }
-.form-validation-error { box-shadow: none !important; }
-.form-line-error { background: none !important; }
+html:not(#sg) .form-error-message { display: none !important; }
+html:not(#sg) .form-validation-error { box-shadow: none !important; }
+html:not(#sg) .form-line-error { background: none !important; }
 */
 
-/* ---------- Submit button ---------- */
-li[data-type="control_button"] {
+/* ---------- Submit / Next buttons ---------- */
+html:not(#sg) li[data-type="control_button"],
+html:not(#sg) li[data-type="control_pagebreak"] {
   border-top: 1px solid var(--sg-line);
   padding-top: 24px !important;
 }
-.form-submit-button,
-.submit-button {
+html:not(#sg) .form-submit-button,
+html:not(#sg) .submit-button,
+html:not(#sg) .form-pagebreak-next,
+html:not(#sg) .form-pagebreak-back {
   font-family: 'Inter', Arial, sans-serif !important;
   font-size: 16px !important;
   font-weight: 700 !important;
@@ -248,30 +268,35 @@ li[data-type="control_button"] {
   cursor: pointer;
   transition: background .15s ease;
 }
-.form-submit-button:hover,
-.submit-button:hover {
+html:not(#sg) .form-submit-button:hover,
+html:not(#sg) .submit-button:hover,
+html:not(#sg) .form-pagebreak-next:hover,
+html:not(#sg) .form-pagebreak-back:hover {
   background: var(--sg-gold-dark) !important;
 }
-.form-submit-button:focus-visible {
+html:not(#sg) .form-submit-button:focus-visible {
   outline: 3px solid var(--sg-ink) !important;
   outline-offset: 2px;
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 600px) {
-  .form-all {
-    margin: 44px 12px 72px !important;
+  html:not(#sg) .form-all {
+    margin: 48px 12px 88px !important;
     border-radius: 12px !important;
   }
-  .form-line,
-  .form-header-group {
+  html:not(#sg) .form-line,
+  html:not(#sg) .form-header-group {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
-  .form-header-group .form-header { font-size: 24px !important; }
-  .form-label, .form-label-top { font-size: 17px !important; }
-  .form-submit-button, .submit-button { width: 100% !important; min-width: 0 !important; }
-  .form-all::after { bottom: -60px; }
+  html:not(#sg) .form-header-group .form-header { font-size: 24px !important; }
+  html:not(#sg) .form-label,
+  html:not(#sg) .form-label-top { font-size: 17px !important; }
+  html:not(#sg) .form-submit-button,
+  html:not(#sg) .submit-button,
+  html:not(#sg) .form-pagebreak-next { width: 100% !important; min-width: 0 !important; }
+  html:not(#sg) .form-all::after { bottom: -60px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
