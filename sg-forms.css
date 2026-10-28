@@ -36,7 +36,7 @@ html:not(#sg) .supernova {
 
 /* ---------- Form card ---------- */
 html:not(#sg) .form-all {
-  max-width: 560px !important;
+  max-width: 720px !important;
   margin: 56px auto 72px !important;
   background: var(--sg-white) !important;
   background-color: var(--sg-white) !important;
@@ -209,6 +209,34 @@ html:not(#sg) .form-textbox::placeholder {
   color: #a3abba !important;
 }
 
+/* ---------- Field widths: fill the card ---------- */
+html:not(#sg) .form-line .form-input,
+html:not(#sg) .form-line .form-input-wide {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+html:not(#sg) .form-textbox,
+html:not(#sg) .form-dropdown,
+html:not(#sg) .form-textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Name and phone: parts share the row evenly */
+html:not(#sg) li[data-type="control_fullname"] [data-wrapper-react],
+html:not(#sg) li[data-type="control_phone"] [data-wrapper-react] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+html:not(#sg) li[data-type="control_fullname"] .form-sub-label-container,
+html:not(#sg) li[data-type="control_phone"] .form-sub-label-container {
+  flex: 1 1 180px !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+   
 /* ---------- Radio / checkbox options — side-by-side tiles ---------- */
 html:not(#sg) .form-single-column,
 html:not(#sg) .form-multiple-column {
